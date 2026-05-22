@@ -24,6 +24,10 @@ Target audience: complete beginners curious about qubits, superposition, and mea
 /learn/qubits/bit-vs-qubit  Lesson 1
 /learn/qubits/superposition Lesson 2
 /learn/qubits/measurement   Lesson 3
+/learn/gates                Chapter 2 intro
+/learn/gates/what-are-gates Lesson 1
+/learn/gates/pauli-gates    Lesson 2
+/learn/gates/hadamard-gate  Lesson 3
 ```
 
 Navigation rules:
@@ -86,11 +90,11 @@ Use Nuxt UI semantic colors (`primary`, `neutral`) for chrome; use quantum accen
 - Chapter 1: Qubits & Superposition (3 lessons with interactives)
 - Learn layout with sidebar and prev/next navigation
 
-### Phase 2 — gates & circuits
+### Phase 2 — gates & circuits — done in this iteration
 
-- Chapter 2: Quantum gates (Pauli, Hadamard, rotations)
+- Chapter 2: Quantum gates (circuit intro, Pauli X/Z, Hadamard)
 - Simple circuit diagram component
-- Gate application on Bloch sphere (consider `@qbead/bloch-sphere`)
+- Gate application with 2D Bloch sphere visualization
 
 ### Phase 3 — entanglement
 

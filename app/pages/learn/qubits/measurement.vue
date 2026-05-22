@@ -41,7 +41,9 @@ useSeoMeta({
 
     <LearnLessonNav
       :prev-path="prevPath"
+      next-path="/learn/gates/what-are-gates"
       prev-label="Previous: Superposition"
+      next-label="Next chapter: What Are Gates?"
     />
   </div>
 </template>

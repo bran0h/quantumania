@@ -15,6 +15,13 @@
         size: 'xl',
         color: 'neutral',
         variant: 'subtle'
+      }, {
+        label: 'Chapter 2: Gates',
+        to: '/learn/gates',
+        icon: 'i-lucide-git-branch',
+        size: 'xl',
+        color: 'neutral',
+        variant: 'subtle'
       }]"
     />
 
@@ -33,7 +40,7 @@
       }, {
         icon: 'i-lucide-book-open',
         title: 'Beginner-first pacing',
-        description: 'Start with bits vs qubits and grow chapter by chapter — gates, entanglement, and algorithms coming soon.'
+        description: 'Start with bits vs qubits, then quantum gates — entanglement and algorithms coming soon.'
       }, {
         icon: 'i-lucide-layers',
         title: 'Structured chapters',

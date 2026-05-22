@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { QubitPreset } from '~/utils/qubit'
 import {
-  blochCoordinates,
   getPresetState,
   getProbabilities,
   ketLabel,
@@ -21,12 +20,6 @@ const presets: { label: string, value: QubitPreset }[] = [
 
 const state = computed(() => getPresetState(preset.value))
 const probabilities = computed(() => getProbabilities(state.value))
-const bloch = computed(() => blochCoordinates(state.value))
-
-const blochPoint = computed(() => ({
-  cx: 100 + bloch.value.x * 70,
-  cy: 100 - bloch.value.z * 70
-}))
 
 function runMeasurement() {
   const outcome = measure(state.value)
@@ -154,65 +147,7 @@ watch(preset, () => {
         </p>
 
         <ClientOnly>
-          <svg
-            viewBox="0 0 200 200"
-            class="mx-auto w-full max-w-xs"
-            aria-label="Bloch sphere projection"
-          >
-            <circle
-              cx="100"
-              cy="100"
-              r="70"
-              fill="none"
-              stroke="currentColor"
-              stroke-opacity="0.2"
-              stroke-width="1.5"
-            />
-            <line
-              x1="30"
-              y1="100"
-              x2="170"
-              y2="100"
-              stroke="currentColor"
-              stroke-opacity="0.15"
-            />
-            <line
-              x1="100"
-              y1="30"
-              x2="100"
-              y2="170"
-              stroke="currentColor"
-              stroke-opacity="0.15"
-            />
-            <text
-              x="168"
-              y="104"
-              class="fill-muted text-[8px]"
-            >|0⟩</text>
-            <text
-              x="28"
-              y="104"
-              class="fill-muted text-[8px]"
-            >|1⟩</text>
-
-            <line
-              :x1="100"
-              :y1="100"
-              :x2="blochPoint.cx"
-              :y2="blochPoint.cy"
-              stroke="var(--color-superposition)"
-              stroke-width="2"
-              stroke-opacity="0.6"
-            />
-
-            <circle
-              :cx="blochPoint.cx"
-              :cy="blochPoint.cy"
-              r="6"
-              fill="var(--color-superposition)"
-              class="transition-all duration-500"
-            />
-          </svg>
+          <QuantumBlochSphere2D :state="state" />
         </ClientOnly>
       </UCard>
     </div>

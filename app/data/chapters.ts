@@ -39,9 +39,25 @@ export const chapters: Chapter[] = [
   {
     slug: 'gates',
     title: 'Quantum Gates',
-    description: 'Learn how operations rotate and flip qubit states on the Bloch sphere.',
-    available: false,
-    lessons: []
+    description: 'Learn how operations rotate and flip qubit states — the building blocks of quantum circuits.',
+    available: true,
+    lessons: [
+      {
+        slug: 'what-are-gates',
+        title: 'What Are Gates?',
+        description: 'See how quantum circuits are built from gates on a qubit wire.'
+      },
+      {
+        slug: 'pauli-gates',
+        title: 'Pauli Gates',
+        description: 'Apply X and Z gates to flip bits and phases.'
+      },
+      {
+        slug: 'hadamard-gate',
+        title: 'Hadamard Gate',
+        description: 'Use H to create superposition from |0⟩ and |1⟩.'
+      }
+    ]
   },
   {
     slug: 'entanglement',
@@ -66,4 +82,20 @@ export function lessonPath(chapterSlug: string, lessonSlug: string): string {
 
 export function chapterPath(chapterSlug: string): string {
   return `/learn/${chapterSlug}`
+}
+
+export function nextChapterPath(currentChapterSlug: string): string | undefined {
+  const index = chapters.findIndex(chapter => chapter.slug === currentChapterSlug)
+
+  if (index < 0) {
+    return undefined
+  }
+
+  const next = chapters[index + 1]
+
+  if (!next?.available || next.lessons.length === 0) {
+    return next ? chapterPath(next.slug) : undefined
+  }
+
+  return lessonPath(next.slug, next.lessons[0]!.slug)
 }
