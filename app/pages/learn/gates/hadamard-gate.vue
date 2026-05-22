@@ -40,7 +40,9 @@ useSeoMeta({
 
     <LearnLessonNav
       :prev-path="prevPath"
+      next-path="/learn/entanglement/two-qubits"
       prev-label="Previous: Pauli Gates"
+      next-label="Next chapter: Two Qubits"
     />
   </div>
 </template>

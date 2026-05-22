@@ -28,6 +28,10 @@ Target audience: complete beginners curious about qubits, superposition, and mea
 /learn/gates/what-are-gates Lesson 1
 /learn/gates/pauli-gates    Lesson 2
 /learn/gates/hadamard-gate  Lesson 3
+/learn/entanglement            Chapter 3 intro
+/learn/entanglement/two-qubits Lesson 1
+/learn/entanglement/bell-state Lesson 2
+/learn/entanglement/measuring-entanglement Lesson 3
 ```
 
 Navigation rules:
@@ -96,9 +100,9 @@ Use Nuxt UI semantic colors (`primary`, `neutral`) for chrome; use quantum accen
 - Simple circuit diagram component
 - Gate application with 2D Bloch sphere visualization
 
-### Phase 3 — entanglement
+### Phase 3 — entanglement — done in this iteration
 
-- Chapter 3: Bell states, CNOT, correlation demos
+- Chapter 3: Two qubits, Bell state (H + CNOT), joint measurement correlations
 
 ### Phase 4 — algorithms & platform
 

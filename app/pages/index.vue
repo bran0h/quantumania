@@ -2,7 +2,7 @@
   <div>
     <UPageHero
       title="Learn quantum computing by doing"
-      description="Quantumania is an interactive learning platform for beginners. Explore qubits, superposition, and measurement through animations and hands-on experiments."
+      description="Quantumania is an interactive learning platform for beginners. Explore qubits, gates, entanglement, and more through animations and hands-on experiments."
       :links="[{
         label: 'Start learning',
         to: '/learn',
@@ -19,6 +19,13 @@
         label: 'Chapter 2: Gates',
         to: '/learn/gates',
         icon: 'i-lucide-git-branch',
+        size: 'xl',
+        color: 'neutral',
+        variant: 'subtle'
+      }, {
+        label: 'Chapter 3: Entanglement',
+        to: '/learn/entanglement',
+        icon: 'i-lucide-link',
         size: 'xl',
         color: 'neutral',
         variant: 'subtle'
@@ -40,7 +47,7 @@
       }, {
         icon: 'i-lucide-book-open',
         title: 'Beginner-first pacing',
-        description: 'Start with bits vs qubits, then quantum gates — entanglement and algorithms coming soon.'
+        description: 'Three chapters cover qubits, quantum gates, and entanglement — with algorithms on the roadmap.'
       }, {
         icon: 'i-lucide-layers',
         title: 'Structured chapters',
@@ -58,8 +65,8 @@
 
     <UPageSection>
       <UPageCTA
-        title="Ready to meet your first qubit?"
-        description="Chapter 1 walks you through classical bits, superposition, and measurement — three short lessons with live demos."
+        title="Ready to explore quantum computing?"
+        description="Three chapters walk you from classical bits to entanglement — each with short lessons and live demos."
         variant="subtle"
         :links="[{
           label: 'Begin Chapter 1',

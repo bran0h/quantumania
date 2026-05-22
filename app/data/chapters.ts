@@ -63,8 +63,24 @@ export const chapters: Chapter[] = [
     slug: 'entanglement',
     title: 'Entanglement',
     description: 'See how two qubits can become linked in ways classical bits never can.',
-    available: false,
-    lessons: []
+    available: true,
+    lessons: [
+      {
+        slug: 'two-qubits',
+        title: 'Two Qubits',
+        description: 'Meet the four basis states of a two-qubit system.'
+      },
+      {
+        slug: 'bell-state',
+        title: 'Bell State',
+        description: 'Build the |Φ+⟩ entangled state with H and CNOT.'
+      },
+      {
+        slug: 'measuring-entanglement',
+        title: 'Measuring Entanglement',
+        description: 'Compare entangled and product states through joint measurements.'
+      }
+    ]
   }
 ]
 
