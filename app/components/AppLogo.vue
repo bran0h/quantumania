@@ -1,0 +1,53 @@
+<template>
+  <svg
+    viewBox="0 0 240 32"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-label="Quantumania"
+  >
+    <circle
+      cx="16"
+      cy="16"
+      r="10"
+      stroke="var(--ui-primary)"
+      stroke-width="2"
+      fill="none"
+    />
+    <ellipse
+      cx="16"
+      cy="16"
+      rx="14"
+      ry="5"
+      stroke="var(--ui-primary)"
+      stroke-width="1.5"
+      fill="none"
+      transform="rotate(-30 16 16)"
+    />
+    <ellipse
+      cx="16"
+      cy="16"
+      rx="14"
+      ry="5"
+      stroke="var(--ui-primary)"
+      stroke-width="1.5"
+      fill="none"
+      transform="rotate(30 16 16)"
+    />
+    <circle
+      cx="16"
+      cy="16"
+      r="2.5"
+      fill="var(--ui-primary)"
+    />
+    <text
+      x="40"
+      y="22"
+      fill="currentColor"
+      font-family="system-ui, sans-serif"
+      font-size="18"
+      font-weight="700"
+    >
+      Quantumania
+    </text>
+  </svg>
+</template>
