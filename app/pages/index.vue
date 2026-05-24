@@ -8,27 +8,6 @@
         to: '/learn',
         trailingIcon: 'i-lucide-arrow-right',
         size: 'xl'
-      }, {
-        label: 'Chapter 1: Qubits',
-        to: '/learn/qubits',
-        icon: 'i-lucide-atom',
-        size: 'xl',
-        color: 'neutral',
-        variant: 'subtle'
-      }, {
-        label: 'Chapter 2: Gates',
-        to: '/learn/gates',
-        icon: 'i-lucide-git-branch',
-        size: 'xl',
-        color: 'neutral',
-        variant: 'subtle'
-      }, {
-        label: 'Chapter 3: Entanglement',
-        to: '/learn/entanglement',
-        icon: 'i-lucide-link',
-        size: 'xl',
-        color: 'neutral',
-        variant: 'subtle'
       }]"
     />
 

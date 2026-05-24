@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import TwoQubitCircuitDiagram from './TwoQubitCircuitDiagram.vue'
 import type { TwoQubitCircuitStep } from '~/utils/twoQubit'
 import {
   applyCNOT,
@@ -56,7 +57,7 @@ function prevStep() {
 </script>
 
 <template>
-  <div class="space-y-6">
+  <div class="not-prose my-8 space-y-6">
     <UCard>
       <div class="space-y-4">
         <div class="flex items-center justify-between gap-4">
@@ -91,7 +92,7 @@ function prevStep() {
           </div>
         </div>
 
-        <QuantumTwoQubitCircuitDiagram :step="currentStep.key" />
+        <TwoQubitCircuitDiagram :step="currentStep.key" />
       </div>
     </UCard>
 

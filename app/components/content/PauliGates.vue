@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import BlochSphere2D from './BlochSphere2D.vue'
 import type { GateName } from '~/utils/gates'
 import { GATES, applyGate } from '~/utils/gates'
 import { getPresetState, getProbabilities, stateLabel } from '~/utils/qubit'
@@ -23,7 +24,7 @@ const gateInfo = computed(() => GATES[selectedGate.value])
 </script>
 
 <template>
-  <div class="space-y-6">
+  <div class="not-prose my-8 space-y-6">
     <UCard>
       <div class="space-y-4">
         <div class="flex flex-wrap gap-4">
@@ -90,7 +91,7 @@ const gateInfo = computed(() => GATES[selectedGate.value])
         </div>
 
         <ClientOnly>
-          <QuantumBlochSphere2D
+          <BlochSphere2D
             :state="inputState"
             label="Input"
             compact
@@ -122,7 +123,7 @@ const gateInfo = computed(() => GATES[selectedGate.value])
             </div>
 
             <ClientOnly>
-              <QuantumBlochSphere2D
+              <BlochSphere2D
                 :state="outputState"
                 label="Output"
                 compact

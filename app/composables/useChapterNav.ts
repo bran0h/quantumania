@@ -3,6 +3,8 @@ import {
   getChapter,
   getLesson,
   lessonPath,
+  nextChapterPath,
+  quizPath,
   type Chapter,
   type Lesson
 } from '~/data/chapters'
@@ -26,6 +28,12 @@ export function useChapterNav(chapterSlug: MaybeRef<string>, lessonSlug?: MaybeR
     return chapter.value.lessons.findIndex(item => item.slug === lessonSlugRef.value)
   })
 
+  const isLastLesson = computed(() =>
+    chapter.value !== undefined
+    && lessonIndex.value >= 0
+    && lessonIndex.value === chapter.value.lessons.length - 1
+  )
+
   const prevLesson = computed<Lesson | undefined>(() => {
     if (!chapter.value || lessonIndex.value <= 0) {
       return undefined
@@ -48,9 +56,39 @@ export function useChapterNav(chapterSlug: MaybeRef<string>, lessonSlug?: MaybeR
       : chapterPath(chapterSlugRef.value)
   )
 
-  const nextPath = computed(() =>
-    nextLesson.value ? lessonPath(chapterSlugRef.value, nextLesson.value.slug) : undefined
-  )
+  const nextPath = computed(() => {
+    if (nextLesson.value) {
+      return lessonPath(chapterSlugRef.value, nextLesson.value.slug)
+    }
+
+    if (isLastLesson.value) {
+      return quizPath(chapterSlugRef.value)
+    }
+
+    return undefined
+  })
+
+  const nextLabel = computed(() => {
+    if (nextLesson.value) {
+      return 'Next lesson'
+    }
+
+    if (isLastLesson.value) {
+      return 'Chapter quiz'
+    }
+
+    return undefined
+  })
+
+  const prevLabel = computed(() => {
+    if (prevLesson.value) {
+      return `Previous: ${prevLesson.value.title}`
+    }
+
+    return 'Chapter overview'
+  })
+
+  const nextChapterLink = computed(() => nextChapterPath(chapterSlugRef.value))
 
   const breadcrumbs = computed(() => {
     const items = [
@@ -72,10 +110,14 @@ export function useChapterNav(chapterSlug: MaybeRef<string>, lessonSlug?: MaybeR
     chapter,
     lesson,
     lessonIndex,
+    isLastLesson,
     prevLesson,
     nextLesson,
     prevPath,
     nextPath,
+    nextLabel,
+    prevLabel,
+    nextChapterLink,
     breadcrumbs
   }
 }

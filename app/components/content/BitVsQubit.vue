@@ -13,7 +13,7 @@ const qubitOptions: { label: string, value: QubitPreset }[] = [
 </script>
 
 <template>
-  <div class="grid gap-6 md:grid-cols-2">
+  <div class="not-prose my-8 grid gap-6 md:grid-cols-2">
     <UCard>
       <template #header>
         <div class="flex items-center gap-2">

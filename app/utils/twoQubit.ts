@@ -163,7 +163,7 @@ function formatCoeff(value: number): string {
   return value.toFixed(2)
 }
 
-export function statesEqual(a: TwoQubitState, b: TwoQubitState, tolerance = 1e-6): boolean {
+function statesEqual(a: TwoQubitState, b: TwoQubitState, tolerance = 1e-6): boolean {
   return a.amplitudes.every((value, index) => Math.abs(value - b.amplitudes[index]!) < tolerance)
 }
 

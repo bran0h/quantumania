@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import BlochSphere2D from './BlochSphere2D.vue'
+import CircuitDiagram from './CircuitDiagram.vue'
 import { applyGate } from '~/utils/gates'
 import { getPresetState, getProbabilities, stateLabel } from '~/utils/qubit'
 
@@ -20,7 +22,7 @@ const barHeight = (value: number) => `${Math.max(value * 100, 4)}%`
 </script>
 
 <template>
-  <div class="space-y-6">
+  <div class="not-prose my-8 space-y-6">
     <UCard>
       <div class="space-y-4">
         <p class="text-sm text-muted">
@@ -45,7 +47,7 @@ const barHeight = (value: number) => `${Math.max(value * 100, 4)}%`
       </div>
     </UCard>
 
-    <QuantumCircuitDiagram :gates="['H']" />
+    <CircuitDiagram :gates="['H']" />
 
     <div class="grid gap-6 md:grid-cols-2">
       <UCard>
@@ -63,7 +65,7 @@ const barHeight = (value: number) => `${Math.max(value * 100, 4)}%`
         </p>
 
         <ClientOnly>
-          <QuantumBlochSphere2D
+          <BlochSphere2D
             :state="inputState"
             compact
           />
@@ -113,7 +115,7 @@ const barHeight = (value: number) => `${Math.max(value * 100, 4)}%`
             </div>
 
             <ClientOnly>
-              <QuantumBlochSphere2D
+              <BlochSphere2D
                 :state="outputState"
                 compact
               />

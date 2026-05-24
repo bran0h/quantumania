@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import BlochSphere2D from './BlochSphere2D.vue'
 import type { QubitPreset } from '~/utils/qubit'
 import {
   getPresetState,
@@ -43,7 +44,7 @@ watch(preset, () => {
 </script>
 
 <template>
-  <div class="space-y-6">
+  <div class="not-prose my-8 space-y-6">
     <UCard>
       <div class="space-y-4">
         <p class="text-sm text-muted">
@@ -147,7 +148,7 @@ watch(preset, () => {
         </p>
 
         <ClientOnly>
-          <QuantumBlochSphere2D :state="state" />
+          <BlochSphere2D :state="state" />
         </ClientOnly>
       </UCard>
     </div>

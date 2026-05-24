@@ -59,7 +59,7 @@ const barHeight = (count: number) =>
 </script>
 
 <template>
-  <div class="space-y-6">
+  <div class="not-prose my-8 space-y-6">
     <UCard>
       <div class="space-y-4">
         <p class="text-sm text-muted">

@@ -67,7 +67,7 @@ export function cloneState(state: QubitState): QubitState {
   return { alpha: state.alpha, beta: state.beta }
 }
 
-export function statesEqual(a: QubitState, b: QubitState, tolerance = 1e-6): boolean {
+function statesEqual(a: QubitState, b: QubitState, tolerance = 1e-6): boolean {
   return (
     Math.abs(a.alpha - b.alpha) < tolerance
     && Math.abs(a.beta - b.beta) < tolerance

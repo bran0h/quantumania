@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { quizPath } from '~/data/chapters'
+
 const route = useRoute()
 
 const chapterSlug = computed(() => {
@@ -8,10 +10,24 @@ const chapterSlug = computed(() => {
 
 const lessonSlug = computed(() => {
   const segments = route.path.split('/').filter(Boolean)
-  return segments[2]
+  const slug = segments[2]
+  return slug && slug !== 'quiz' ? slug : undefined
 })
 
-const { breadcrumbs } = useChapterNav(chapterSlug, lessonSlug)
+const isQuizPage = computed(() => route.path.endsWith('/quiz'))
+
+const { breadcrumbs: navBreadcrumbs } = useChapterNav(chapterSlug, lessonSlug)
+
+const breadcrumbs = computed(() => {
+  if (isQuizPage.value) {
+    return [
+      ...navBreadcrumbs.value,
+      { label: 'Chapter quiz', to: quizPath(chapterSlug.value) }
+    ]
+  }
+
+  return navBreadcrumbs.value
+})
 </script>
 
 <template>

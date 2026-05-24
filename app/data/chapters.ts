@@ -100,6 +100,10 @@ export function chapterPath(chapterSlug: string): string {
   return `/learn/${chapterSlug}`
 }
 
+export function quizPath(chapterSlug: string): string {
+  return `/learn/${chapterSlug}/quiz`
+}
+
 export function nextChapterPath(currentChapterSlug: string): string | undefined {
   const index = chapters.findIndex(chapter => chapter.slug === currentChapterSlug)
 
