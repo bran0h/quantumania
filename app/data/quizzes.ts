@@ -75,6 +75,31 @@ export const quizzes: Record<string, QuizQuestion[]> = {
       correctIndex: 1,
       explanation: 'Entangled joint states cannot be factored into separate descriptions for each qubit.'
     }
+  ],
+  algorithms: [
+    {
+      question: 'What does the Deutsch–Jozsa algorithm determine?',
+      options: [
+        'Whether a function is constant or balanced',
+        'The exact truth table of any function',
+        'How many qubits are entangled',
+        'The best classical sorting algorithm'
+      ],
+      correctIndex: 0,
+      explanation: 'Deutsch–Jozsa distinguishes constant functions (same output everywhere) from balanced ones (half 0, half 1).'
+    },
+    {
+      question: 'After Deutsch–Jozsa, measuring the input qubit as |1⟩ means the function is…',
+      options: ['Constant', 'Balanced', 'Always zero', 'Unmeasurable'],
+      correctIndex: 1,
+      explanation: 'Interference routes balanced functions to |1⟩ and constant functions to |0⟩ on the input qubit.'
+    },
+    {
+      question: 'Grover\'s algorithm provides roughly what speedup for unstructured search?',
+      options: ['Exponential (2ⁿ)', 'Quadratic (√N)', 'No speedup', 'Linear (N/2)'],
+      correctIndex: 1,
+      explanation: 'Grover needs about √N oracle queries instead of O(N) classically — a quadratic improvement.'
+    }
   ]
 }
 

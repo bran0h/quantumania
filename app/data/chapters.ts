@@ -81,6 +81,29 @@ export const chapters: Chapter[] = [
         description: 'Compare entangled and product states through joint measurements.'
       }
     ]
+  },
+  {
+    slug: 'algorithms',
+    title: 'Quantum Algorithms',
+    description: 'See how quantum circuits solve specific problems faster than classical approaches — starting with Deutsch–Jozsa and Grover search.',
+    available: true,
+    lessons: [
+      {
+        slug: 'why-algorithms',
+        title: 'Why Quantum Algorithms?',
+        description: 'Compare classical and quantum query counts for structured problems.'
+      },
+      {
+        slug: 'deutsch-jozsa',
+        title: 'Deutsch–Jozsa',
+        description: 'Distinguish constant from balanced functions in a single quantum query.'
+      },
+      {
+        slug: 'grover-search',
+        title: 'Grover\'s Search',
+        description: 'Amplify the amplitude of a marked item in an unstructured search.'
+      }
+    ]
   }
 ]
 

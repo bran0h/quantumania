@@ -26,7 +26,7 @@
       }, {
         icon: 'i-lucide-book-open',
         title: 'Beginner-first pacing',
-        description: 'Three chapters cover qubits, quantum gates, and entanglement — with algorithms on the roadmap.'
+        description: 'Four chapters cover qubits, gates, entanglement, and introductory algorithms — with more on the roadmap.'
       }, {
         icon: 'i-lucide-layers',
         title: 'Structured chapters',
@@ -45,7 +45,7 @@
     <UPageSection>
       <UPageCTA
         title="Ready to explore quantum computing?"
-        description="Three chapters walk you from classical bits to entanglement — each with short lessons and live demos."
+        description="Four chapters walk you from classical bits to entanglement and quantum algorithms — each with short lessons and live demos."
         variant="subtle"
         :links="[{
           label: 'Begin Chapter 1',
