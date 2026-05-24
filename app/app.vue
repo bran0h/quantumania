@@ -43,6 +43,13 @@ useSeoMeta({
             size="sm"
           />
           <UButton
+            to="/playground"
+            label="Playground"
+            color="neutral"
+            variant="ghost"
+            size="sm"
+          />
+          <UButton
             to="/learn/glossary"
             label="Glossary"
             color="neutral"
@@ -82,7 +89,12 @@ useSeoMeta({
       </template>
 
       <template #right>
-       Made with 💖 by <a href="https://hozza.dev" target="_blank" class="text-primary">bran0h</a>
+        Made with 💖 by
+        <a
+          href="https://hozza.dev"
+          target="_blank"
+          class="text-primary"
+        >bran0h</a>
       </template>
     </UFooter>
   </UApp>

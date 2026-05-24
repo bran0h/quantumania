@@ -162,6 +162,13 @@ useSeoMeta({
 
     <div class="mt-10 flex flex-wrap gap-3">
       <UButton
+        to="/playground"
+        label="Quantum playground"
+        icon="i-lucide-flask-conical"
+        color="primary"
+        variant="soft"
+      />
+      <UButton
         to="/learn/glossary"
         label="Glossary"
         icon="i-lucide-book-marked"

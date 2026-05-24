@@ -20,6 +20,13 @@ import { chapterPath, chapters } from '~/data/chapters'
         size: 'xl',
         color: 'neutral',
         variant: 'outline'
+      }, {
+        label: 'Open playground',
+        to: '/playground',
+        icon: 'i-lucide-flask-conical',
+        size: 'xl',
+        color: 'neutral',
+        variant: 'outline'
       }]"
     >
       <HeroQuantumAnimation />
