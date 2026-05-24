@@ -2,6 +2,12 @@
 const title = 'Quantumania'
 const description = 'Learn quantum computing through interactive experiments and animations. Beginner-friendly lessons inspired by real quantum concepts.'
 
+const navItems = [
+  { to: '/learn', label: 'Learn' },
+  { to: '/playground', label: 'Playground' },
+  { to: '/learn/glossary', label: 'Glossary' }
+]
+
 useHead({
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' }
@@ -36,25 +42,27 @@ useSeoMeta({
 
         <nav class="hidden sm:flex items-center gap-1 ml-4">
           <UButton
-            to="/learn"
-            label="Learn"
+            v-for="item in navItems"
+            :key="item.to"
+            :to="item.to"
+            :label="item.label"
             color="neutral"
             variant="ghost"
             size="sm"
           />
+        </nav>
+      </template>
+
+      <template #body>
+        <nav class="flex flex-col gap-1 px-4 pb-4 sm:hidden">
           <UButton
-            to="/playground"
-            label="Playground"
+            v-for="item in navItems"
+            :key="item.to"
+            :to="item.to"
+            :label="item.label"
             color="neutral"
             variant="ghost"
-            size="sm"
-          />
-          <UButton
-            to="/learn/glossary"
-            label="Glossary"
-            color="neutral"
-            variant="ghost"
-            size="sm"
+            block
           />
         </nav>
       </template>
