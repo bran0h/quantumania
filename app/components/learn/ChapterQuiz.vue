@@ -108,9 +108,17 @@ function retry() {
       <UButton
         v-if="submitted && passed && !nextChapter"
         to="/learn"
-        label="Back to chapters"
+        label="Course complete — back to chapters"
+        trailing-icon="i-lucide-trophy"
+      />
+
+      <UButton
+        v-if="submitted && passed && !nextChapter"
+        to="/learn/glossary"
+        label="Browse glossary"
         color="neutral"
         variant="outline"
+        icon="i-lucide-book-marked"
       />
     </div>
 
@@ -121,7 +129,9 @@ function retry() {
       color="primary"
       variant="subtle"
       :title="`Score: ${score}/${questions.length}`"
-      description="Great work — you passed this chapter quiz."
+      :description="nextChapter
+        ? 'Great work — you passed this chapter quiz.'
+        : 'Congratulations — you completed the full course!'"
     />
   </UCard>
 </template>

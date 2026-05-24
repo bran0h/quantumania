@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import CircuitDiagram from './CircuitDiagram.vue'
 import type { GateName } from '~/utils/gates'
-import { GATES } from '~/utils/gates'
-import { applyGates } from '~/utils/gates'
+import { GATES, applyGates } from '~/utils/gates'
 import { getPresetState, getProbabilities, stateLabel } from '~/utils/qubit'
 
 const steps = [

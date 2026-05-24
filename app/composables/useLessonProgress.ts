@@ -1,3 +1,5 @@
+import { chapters, lessonPath, quizPath } from '~/data/chapters'
+
 const STORAGE_KEY = 'quantumania-progress'
 
 export interface LessonProgress {
@@ -84,6 +86,46 @@ export function useLessonProgress() {
     return { completed, total, quizPassed, isComplete: completed === total && quizPassed }
   }
 
+  function isCourseComplete(): boolean {
+    return chapters
+      .filter(chapter => chapter.available)
+      .every(chapter =>
+        chapterStats(chapter.slug, chapter.lessons.map(lesson => lesson.slug)).isComplete
+      )
+  }
+
+  function getContinuePath(): string | undefined {
+    for (const chapter of chapters.filter(item => item.available)) {
+      for (const lesson of chapter.lessons) {
+        if (!isLessonComplete(chapter.slug, lesson.slug)) {
+          return lessonPath(chapter.slug, lesson.slug)
+        }
+      }
+
+      if (!isQuizPassed(chapter.slug)) {
+        return quizPath(chapter.slug)
+      }
+    }
+
+    return undefined
+  }
+
+  function getContinueLabel(): string | undefined {
+    for (const chapter of chapters.filter(item => item.available)) {
+      for (const lesson of chapter.lessons) {
+        if (!isLessonComplete(chapter.slug, lesson.slug)) {
+          return `${chapter.title}: ${lesson.title}`
+        }
+      }
+
+      if (!isQuizPassed(chapter.slug)) {
+        return `${chapter.title} quiz`
+      }
+    }
+
+    return undefined
+  }
+
   return {
     progress,
     isLessonComplete,
@@ -91,6 +133,9 @@ export function useLessonProgress() {
     markLessonComplete,
     markQuizPassed,
     resetProgress,
-    chapterStats
+    chapterStats,
+    isCourseComplete,
+    getContinuePath,
+    getContinueLabel
   }
 }

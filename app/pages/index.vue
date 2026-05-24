@@ -1,15 +1,62 @@
+<script setup lang="ts">
+import { chapterPath, chapters } from '~/data/chapters'
+</script>
+
 <template>
   <div>
     <UPageHero
+      orientation="horizontal"
       title="Learn quantum computing by doing"
-      description="Quantumania is an interactive learning platform for beginners. Explore qubits, gates, entanglement, and more through animations and hands-on experiments."
+      description="Quantumania is an interactive learning platform for beginners. Explore qubits, gates, entanglement, and algorithms through animations and hands-on experiments."
       :links="[{
         label: 'Start learning',
-        to: '/learn',
+        to: '/learn/qubits/bit-vs-qubit',
         trailingIcon: 'i-lucide-arrow-right',
         size: 'xl'
+      }, {
+        label: 'Browse chapters',
+        to: '/learn',
+        icon: 'i-lucide-library',
+        size: 'xl',
+        color: 'neutral',
+        variant: 'outline'
       }]"
-    />
+    >
+      <HeroQuantumAnimation />
+    </UPageHero>
+
+    <UPageSection
+      id="chapters"
+      title="Four guided chapters"
+      description="Each chapter has three short lessons, an interactive demo, and a quiz to check your understanding."
+    >
+      <div class="grid gap-4 sm:grid-cols-2">
+        <UCard
+          v-for="(chapter, index) in chapters"
+          :key="chapter.slug"
+          :ui="{ body: 'space-y-3' }"
+        >
+          <div class="flex items-center gap-2">
+            <span class="flex size-8 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary">
+              {{ index + 1 }}
+            </span>
+            <h3 class="font-semibold">
+              {{ chapter.title }}
+            </h3>
+          </div>
+          <p class="text-sm text-muted">
+            {{ chapter.description }}
+          </p>
+          <UButton
+            :to="chapterPath(chapter.slug)"
+            label="Open chapter"
+            trailing-icon="i-lucide-arrow-right"
+            size="sm"
+            variant="soft"
+          />
+        </UCard>
+      </div>
+    </UPageSection>
 
     <UPageSection
       id="features"

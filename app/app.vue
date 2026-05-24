@@ -39,6 +39,13 @@ useSeoMeta({
             variant="ghost"
             size="sm"
           />
+          <UButton
+            to="/learn/glossary"
+            label="Glossary"
+            color="neutral"
+            variant="ghost"
+            size="sm"
+          />
         </nav>
       </template>
 
@@ -46,7 +53,7 @@ useSeoMeta({
         <UColorModeButton />
 
         <UButton
-          to="https://github.com/branislavhozza/quantumania"
+          to="https://github.com/bran0h/quantumania"
           target="_blank"
           icon="i-simple-icons-github"
           aria-label="GitHub"
@@ -72,13 +79,7 @@ useSeoMeta({
       </template>
 
       <template #right>
-        <UButton
-          to="/learn"
-          label="Start learning"
-          color="neutral"
-          variant="ghost"
-          size="sm"
-        />
+       Made with 💖 by <a href="https://hozza.dev" target="_blank" class="text-primary">bran0h</a>
       </template>
     </UFooter>
   </UApp>
